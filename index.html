@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张承烨 | 影视后期+网络工程 作品集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#7C3AED',
+                        accent: '#00FFFF',
+                        neon: '#00FF88',
+                        dark: '#050816',
+                        darkLight: '#0F172A',
+                        darkLighter: '#1E293B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #050816;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ======================================== */
+        /* 🔥 终极科技感背景系统 */
+        /* ======================================== */
+        
+        /* 主背景 - 深空渐变 */
+        .bg-cosmic {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -5;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124, 58, 237, 0.3), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0, 102, 255, 0.25), transparent),
+                radial-gradient(ellipse 50% 30% at 20% 60%, rgba(0, 255, 255, 0.15), transparent),
+                linear-gradient(180deg, #050816 0%, #070B20 50%, #050816 100%);
+        }
+
+        /* 液态金属流动光团 - 加强亮度 */
+        .liquid-orb-1 {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.45) 0%, rgba(124, 58, 237, 0.25) 40%, transparent 70%);
+            filter: blur(80px);
+            z-index: -4;
+            animation: orbFloat1 15s ease-in-out infinite;
+            top: -200px;
+            left: -200px;
+        }
+        .liquid-orb-2 {
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.35) 0%, rgba(0, 102, 255, 0.2) 40%, transparent 70%);
+            filter: blur(70px);
+            z-index: -4;
+            animation: orbFloat2 18s ease-in-out infinite;
+            bottom: -200px;
+            right: -150px;
+        }
+        .liquid-orb-3 {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, rgba(0, 255, 136, 0.15) 50%, transparent 70%);
+            filter: blur(60px);
+            z-index: -4;
+            animation: orbFloat3 20s ease-in-out infinite;
+            top: 40%;
+            left: 50%;
+        }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(100px, 50px) scale(1.1); }
+            50% { transform: translate(50px, 100px) scale(0.95); }
+            75% { transform: translate(-50px, 50px) scale(1.05); }
+        }
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-80px, -60px) scale(1.15); }
+            66% { transform: translate(40px, -80px) scale(0.9); }
+        }
+        @keyframes orbFloat3 {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(calc(-50% + 100px), calc(-50% - 50px)) scale(1.2); }
+        }
+
+        /* 科技网格 - 透视效果 */
+        .grid-tech {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -3;
+            background-image: 
+                linear-gradient(rgba(0, 102, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 102, 255, 0.15) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
+            opacity: 0.6;
+        }
+
+        /* 粒子效果容器 */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* 扫描线效果 */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1) 0px,
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 鼠标跟随 - 超级光效 */
+        #mouse-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.4) 0%, rgba(124, 58, 237, 0.25) 30%, rgba(0, 255, 255, 0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            filter: blur(60px);
+            opacity: 0.8;
+            transition: transform 0.08s ease-out;
+            mix-blend-mode: screen;
+        }
+
+        /* ======================================== */
+        /* 🔥 页面切换动画 - 修复完美版 */
+        /* ======================================== */
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            visibility: hidden;
+            opacity: 0;
+            min-height: 100vh;
+            padding-top: 80px;
+            z-index: 1;
+            transform: translateY(30px);
+            transition: opacity 0.4s ease, 
+                        transform 0.4s ease,
+                        visibility 0.4s ease;
+        }
+        .page.active {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 页面内容进入动画 */
+        .page-content > * {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .page.active .page-content > * {
+            animation: contentFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .page.active .page-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .page.active .page-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .page.active .page-content > *:nth-child(3) { animation-delay: 0.3s; }
+        .page.active .page-content > *:nth-child(4) { animation-delay: 0.4s; }
+        .page.active .page-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes contentFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ======================================== */
+        /* UI 组件样式 */
+        /* ======================================== */
+        
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 102, 255, 0.2);
+            box-shadow: 0 0 40px rgba(0, 102, 255, 0.1);
+        }
+        .glass:hover {
+            border-color: rgba(0, 102, 255, 0.4);
+            box-shadow: 0 0 60px rgba(0, 102, 255, 0.15);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #0066FF 0%, #00FFFF 50%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 视频播放按钮样式 */
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(0, 102, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.6);
+            z-index: 10;
+        }
+        .video-play-btn i {
+            font-size: 28px;
+            margin-left: 5px;
+        }
+        .work-card:hover .video-play-btn {
+            transform: translate(-50%, -50%) scale(1.15);
+            background: rgba(0, 255, 255, 0.95);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+        }
+
+        /* ========== 统一动感效果 - 加强版 ========== */
+        
+        .nav-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        .nav-btn:hover::before {
+            left: 100%;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            background: rgba(0, 102, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.4), inset 0 0 20px rgba(0, 102, 255, 0.1);
+        }
+        .nav-btn.active {
+            background: rgba(0, 102, 255, 0.25);
+            color: #00FFFF;
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+        }
+
+        .btn-primary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-secondary:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: #00FFFF;
+            color: #00FFFF;
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.3), inset 0 0 30px rgba(0, 255, 255, 0.1);
+        }
+
+        .work-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .work-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #0066FF, #00FFFF, #7C3AED);
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s;
+            filter: blur(8px);
+        }
+        .work-card:hover::before {
+            opacity: 1;
+        }
+        .work-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.3);
+        }
+        .work-card:hover img, .work-card:hover video {
+            transform: scale(1.15);
+        }
+        .work-card img, .work-card video {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .filter-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .filter-btn:hover {
+            transform: translateY(-3px) scale(1.08);
+            border-color: #00FFFF;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #0066FF, #7C3AED);
+            color: white;
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(0, 102, 255, 0.5);
+        }
+
+        .tag-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .tag-item:hover {
+            transform: translateY(-4px) scale(1.15);
+            border-color: #00FFFF;
+            background: rgba(0, 255, 255, 0.15);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+            color: #00FFFF;
+        }
+
+        .skill-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.25);
+            border-color: rgba(0, 255, 255, 0.4);
+        }
+
+        .contact-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .contact-item:hover {
+            transform: translateX(10px) scale(1.03);
+            background: rgba(0, 102, 255, 0.15);
+            border-left: 3px solid #00FFFF;
+        }
+        .contact-item:hover i {
+            transform: scale(1.3) rotate(5deg);
+        }
+        .contact-item i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-btn:hover {
+            transform: translateY(-8px) scale(1.2);
+            background: linear-gradient(135deg, #0066FF, #00FFFF);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .resume-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .resume-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 102, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.3);
+        }
+
+        /* 作品分类区域容器 */
+        .work-section {
+            transition: all 0.3s ease;
+        }
+
+        /* ======================================== */
+        /* 🔥 平面创作 - 书本堆叠效果（稳定版） */
+        /* ======================================== */
+        .book-stack-container {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
+
+        .book-item {
+            position: absolute;
+            width: 280px;
+            height: 380px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(0, 102, 255, 0.3);
+        }
+
+        .book-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            background: linear-gradient(90deg, 
+                rgba(0,0,0,0.5) 0%, 
+                rgba(255,255,255,0.08) 50%, 
+                rgba(0,0,0,0.3) 100%);
+            border-radius: 6px 0 0 6px;
+            z-index: 2;
+        }
+
+        .book-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(90deg, 
+                rgba(0,0,0,0.3) 0%, 
+                rgba(255,255,255,0.05) 100%);
+            border-radius: 0 6px 6px 0;
+            z-index: 2;
+        }
+
+        .book-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .book-item .book-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, 
+                transparent 50%, 
+                rgba(0, 0, 0, 0.85) 100%);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .book-item:hover .book-overlay {
+            opacity: 1;
+        }
+
+        .book-item .book-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            transform: translateY(15px);
+            transition: transform 0.3s ease;
+        }
+
+        .book-item:hover .book-title {
+            transform: translateY(0);
+        }
+
+        .book-item .book-desc {
+            font-size: 12px;
+            color: rgba(255,255,255,0.7);
+            transform: translateY(15px);
+            transition: transform 0.3s ease 0.05s;
+        }
+
+        .book-item:hover .book-desc {
+            transform: translateY(0);
+        }
+
+        .book-item .book-view-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 102, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
+        }
+
+        .book-item:hover .book-view-btn {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* 书本堆叠 - 初始位置（稳定版，不会来回跳动） */
+        .book-1 {
+            z-index: 6;
+            transform: translateX(0) rotateY(0deg) scale(1);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.7),
+                0 0 35px rgba(0, 102, 255, 0.4),
+                inset 0 0 0 1px rgba(0, 255, 255, 0.4);
+        }
+
+        .book-2 {
+            z-index: 5;
+            transform: translateX(-60px) rotateY(12deg) scale(0.92);
+            opacity: 0.9;
+        }
+
+        .book-3 {
+            z-index: 4;
+            transform: translateX(-110px) rotateY(20deg) scale(0.85);
+            opacity: 0.75;
+        }
+
+        .book-4 {
+            z-index: 5;
+            transform: translateX(60px) rotateY(-12deg) scale(0.92);
+            opacity: 0.9;
+        }
+
+        .book-5 {
+            z-index: 4;
+            transform: translateX(110px) rotateY(-20deg) scale(0.85);
+            opacity: 0.75;
+        }
+
+        .book-6 {
+            z-index: 3;
+            transform: translateX(160px) rotateY(-28deg) scale(0.78);
+            opacity: 0.55;
+        }
+
+        /* 悬停时：书本轻微展开，不会大幅移动导致跳动 */
+        .book-stack-container:hover .book-1 {
+            transform: translateX(-30px) rotateY(-3deg) scale(1);
+        }
+
+        .book-stack-container:hover .book-2 {
+            transform: translateX(-90px) rotateY(8deg) scale(0.93);
+            opacity: 0.95;
+        }
+
+        .book-stack-container:hover .book-3 {
+            transform: translateX(-140px) rotateY(16deg) scale(0.87);
+            opacity: 0.82;
+        }
+
+        .book-stack-container:hover .book-4 {
+            transform: translateX(90px) rotateY(-8deg) scale(0.93);
+            opacity: 0.95;
+        }
+
+        .book-stack-container:hover .book-5 {
+            transform: translateX(140px) rotateY(-16deg) scale(0.87);
+            opacity: 0.82;
+        }
+
+        .book-stack-container:hover .book-6 {
+            transform: translateX(190px) rotateY(-24deg) scale(0.8);
+            opacity: 0.65;
+        }
+
+        /* 单本书悬停：轻微放大+发光，不移动位置，避免跳动 */
+        .book-item:hover {
+            z-index: 20 !important;
+            transform: scale(1.08) !important;
+            opacity: 1 !important;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(0, 102, 255, 0.6),
+                0 0 80px rgba(0, 255, 255, 0.3) !important;
+        }
+
+        /* 书本发光边框 */
+        .book-item::before {
+            box-shadow: 
+                inset 2px 0 4px rgba(255,255,255,0.1),
+                -2px 0 8px rgba(0, 102, 255, 0.3);
+        }
+
+        /* 平面创作标签 */
+        .graphic-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(124, 58, 237, 0.2));
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+            font-size: 11px;
+            color: #00FFFF;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔥 终极科技感背景系统 -->
+    <div class="bg-cosmic"></div>
+    <div class="liquid-orb-1"></div>
+    <div class="liquid-orb-2"></div>
+    <div class="liquid-orb-3"></div>
+    <div class="grid-tech"></div>
+    <div class="scanlines"></div>
+    <canvas id="particles"></canvas>
+    <div id="mouse-glow"></div>
+
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="showPage('home')">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary via-accent to-secondary flex items-center justify-center" style="box-shadow: 0 0 20px rgba(0,102,255,0.5);">
+                    <span class="font-bold text-lg">Z</span>
+                </div>
+                <span class="font-bold text-lg hidden sm:block text-gradient">张承烨</span>
+            </div>
+            <div class="flex items-center space-x-1">
+                <button class="nav-btn active px-4 py-2 rounded-lg" onclick="showPage('home')">
+                    <i class="fa fa-home mr-1"></i><span class="hidden sm:inline">首页</span>
+                </button>
+                <button class="nav-btn px-4 py-2 rounded-lg" onclick="showPage('works')">
+                    <i class="fa fa-film mr-1"></i><span class="hidden sm:inline">作品集</span>
+                </button>
+                <button class="nav-btn px-4 py-2 rounded-lg" onclick="showPage('about')">
+                    <i class="fa fa-user mr-1"></i><span class="hidden sm:inline">关于我</span>
+                </button>
+                <button class="nav-btn px-4 py-2 rounded-lg" onclick="showPage('contact')">
+                    <i class="fa fa-envelope mr-1"></i><span class="hidden sm:inline">联系我</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <div id="page-home" class="page active">
+        <div class="page-content">
+            <!-- 🔥 第一屏：Hero 主视觉 -->
+            <div class="min-h-screen flex items-center justify-center px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <!-- 头像 - 霓虹发光 -->
+                    <div class="relative inline-block mb-8">
+                        <div class="w-40 h-40 rounded-full p-[2px]" style="background: linear-gradient(45deg, #0066FF, #00FFFF, #7C3AED, #00FF88); animation: rotate 4s linear infinite; box-shadow: 0 0 60px rgba(0,102,255,0.5);">
+                            <div class="w-full h-full rounded-full bg-dark flex items-center justify-center">
+                                <span class="text-6xl font-bold text-gradient">Z</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-1 -right-1 w-12 h-12 rounded-full border-4 border-dark flex items-center justify-center" style="background: linear-gradient(135deg, #00FF88, #00FFFF);">
+                            <i class="fa fa-check text-white text-base"></i>
+                        </div>
+                    </div>
+
+                    <h1 class="text-6xl md:text-7xl font-bold mb-4">
+                        <span class="text-gradient">张承烨</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-6">
+                        影视后期制作 | 网络工程 | 三维设计
+                        <br>
+                        <span style="color: #00FFFF; text-shadow: 0 0 20px rgba(0,255,255,0.5);">复合型创作者</span>
+                    </p>
+
+                    <!-- 定位宣言 -->
+                    <div class="glass rounded-2xl p-6 mb-8">
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            1年专业视频剪辑经验，累计完成<span style="color: #00FFFF; text-shadow: 0 0 10px rgba(0,255,255,0.5);" class="font-semibold">50+</span>商业视频项目，
+                            兼具网络工程技术背景与三维设计能力
+                        </p>
+                    </div>
+
+                    <!-- 核心标签 - 霓虹效果 -->
+                    <div class="flex flex-wrap justify-center gap-3 mb-10">
+                        <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">视频剪辑</span>
+                        <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">影视后期</span>
+                        <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">AE特效</span>
+                        <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">3D建模</span>
+                        <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">平面设计</span>
+                    </div>
+
+                    <!-- 行动按钮 - 霓虹发光 -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="showPage('works')" class="btn-primary px-10 py-4 rounded-xl font-semibold text-lg" style="background: linear-gradient(135deg, #0066FF, #7C3AED); box-shadow: 0 0 30px rgba(0,102,255,0.4);">
+                            <i class="fa fa-film mr-2"></i>查看作品集
+                        </button>
+                        <button onclick="showPage('contact')" class="btn-secondary px-10 py-4 bg-darkLight border border-primary/40 rounded-xl font-semibold text-lg">
+                            <i class="fa fa-paper-plane mr-2"></i>联系我
+                        </button>
+                    </div>
+
+                    <!-- 下滑提示 -->
+                    <div class="mt-16 animate-bounce">
+                        <i class="fa fa-chevron-down text-2xl" style="color: #00FFFF; opacity: 0.6;"></i>
+                        <p class="text-gray-500 text-sm mt-2">向下滚动了解更多</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔥 第二屏：数据统计 - 数字成就 -->
+            <div class="py-20 px-4">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl font-bold mb-4">
+                            <span class="text-gradient">数字成就</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg">用数据说话，用作品证明</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- 统计1 -->
+                        <div class="glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-300">
+                            <div class="text-5xl font-bold mb-2 text-gradient">50+</div>
+                            <div class="text-gray-400">商业视频项目</div>
+                            <i class="fa fa-video-camera text-2xl mt-4" style="color: #0066FF; opacity: 0.5;"></i>
+                        </div>
+                        <!-- 统计2 -->
+                        <div class="glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-300">
+                            <div class="text-5xl font-bold mb-2 text-gradient">4+</div>
+                            <div class="text-gray-400">专业技能方向</div>
+                            <i class="fa fa-cogs text-2xl mt-4" style="color: #7C3AED; opacity: 0.5;"></i>
+                        </div>
+                        <!-- 统计3 -->
+                        <div class="glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-300">
+                            <div class="text-5xl font-bold mb-2 text-gradient">1年</div>
+                            <div class="text-gray-400">全职工作经验</div>
+                            <i class="fa fa-briefcase text-2xl mt-4" style="color: #00FFFF; opacity: 0.5;"></i>
+                        </div>
+                        <!-- 统计4 -->
+                        <div class="glass rounded-2xl p-8 text-center hover:scale-105 transition-all duration-300">
+                            <div class="text-5xl font-bold mb-2 text-gradient">10+</div>
+                            <div class="text-gray-400">专业软件精通</div>
+                            <i class="fa fa-laptop text-2xl mt-4" style="color: #00FF88; opacity: 0.5;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔥 第三屏：核心服务 - 我能做什么 -->
+            <div class="py-20 px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-14">
+                        <h2 class="text-4xl font-bold mb-4">
+                            <span class="text-gradient">我能做什么</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg">四大核心能力，一站式数字内容解决方案</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- 服务1：视频剪辑 -->
+                        <div class="skill-card glass rounded-2xl p-8 cursor-pointer" onclick="showPage('works')">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(0,102,255,0.3), rgba(0,255,255,0.2)); box-shadow: 0 0 30px rgba(0,102,255,0.3);">
+                                <i class="fa fa-video-camera text-3xl" style="color: #00FFFF;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">视频剪辑</h3>
+                            <p class="text-gray-400 text-sm mb-4">商业宣传片、产品展示片、年会视频等各类视频剪辑制作</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">Premiere</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">DaVinci</span>
+                            </div>
+                            <div class="mt-4 text-sm" style="color: #00FFFF;">
+                                了解更多 <i class="fa fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- 服务2：AE特效 -->
+                        <div class="skill-card glass rounded-2xl p-8 cursor-pointer" onclick="showPage('works')">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(0,102,255,0.2)); box-shadow: 0 0 30px rgba(124,58,237,0.3);">
+                                <i class="fa fa-magic text-3xl" style="color: #7C3AED;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">AE特效</h3>
+                            <p class="text-gray-400 text-sm mb-4">动态视觉、特效合成、Motion Graphics、片头片尾制作</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">After Effects</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">MG动画</span>
+                            </div>
+                            <div class="mt-4 text-sm" style="color: #7C3AED;">
+                                了解更多 <i class="fa fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- 服务3：3D制作 -->
+                        <div class="skill-card glass rounded-2xl p-8 cursor-pointer" onclick="showPage('works')">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,255,136,0.2)); box-shadow: 0 0 30px rgba(0,255,255,0.3);">
+                                <i class="fa fa-cube text-3xl" style="color: #00FF88;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">三维设计</h3>
+                            <p class="text-gray-400 text-sm mb-4">3D建模、场景渲染、角色动画、产品三维展示</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">Maya</span>
+                            </div>
+                            <div class="mt-4 text-sm" style="color: #00FF88;">
+                                了解更多 <i class="fa fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- 服务4：平面设计 -->
+                        <div class="skill-card glass rounded-2xl p-8 cursor-pointer" onclick="showPage('works')">
+                            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style="background: linear-gradient(135deg, rgba(0,255,136,0.3), rgba(0,102,255,0.2)); box-shadow: 0 0 30px rgba(0,255,136,0.3);">
+                                <i class="fa fa-paint-brush text-3xl" style="color: #0066FF;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">平面设计</h3>
+                            <p class="text-gray-400 text-sm mb-4">海报设计、品牌视觉、电商主图、UI界面设计</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">Photoshop</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-500">Illustrator</span>
+                            </div>
+                            <div class="mt-4 text-sm" style="color: #0066FF;">
+                                了解更多 <i class="fa fa-arrow-right ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔥 第四屏：精选作品预览 -->
+            <div class="py-20 px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-14">
+                        <h2 class="text-4xl font-bold mb-4">
+                            <span class="text-gradient">精选作品</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg">部分代表作品预览，点击查看全部</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                        <!-- 精选作品1：AE特效 -->
+                        <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" onclick="showPage('works')">
+                            <div class="relative aspect-video overflow-hidden">
+                                <video class="w-full h-full object-cover" muted loop>
+                                    <source src="https://aka.doubaocdn.com/s/f9To1wbadj" type="video/mp4">
+                                </video>
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                    <i class="fa fa-magic mr-1"></i>AE特效
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold mb-2">Logo特效动画</h3>
+                                <p class="text-gray-500 text-sm">动态视觉 · 特效合成</p>
+                            </div>
+                        </div>
+
+                        <!-- 精选作品2：3D制作 -->
+                        <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" onclick="showPage('works')">
+                            <div class="relative aspect-video overflow-hidden">
+                                <img src="https://aka.doubaocdn.com/s/0wVp1wbuoN" class="w-full h-full object-cover">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-secondary/30">
+                                    <i class="fa fa-cube mr-1"></i>3D制作
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold mb-2">岛屿场景</h3>
+                                <p class="text-gray-500 text-sm">三维建模 · 场景渲染</p>
+                            </div>
+                        </div>
+
+                        <!-- 精选作品3：视频剪辑 -->
+                        <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" onclick="showPage('works')">
+                            <div class="relative aspect-video overflow-hidden">
+                                <video class="w-full h-full object-cover" muted loop>
+                                    <source src="https://aka.doubaocdn.com/s/QmRt1wbuc9" type="video/mp4">
+                                </video>
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-primary/30">
+                                    <i class="fa fa-video-camera mr-1"></i>视频剪辑
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-lg font-semibold mb-2">鲜花切换转场</h3>
+                                <p class="text-gray-500 text-sm">转场特效 · 创意剪辑</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 查看更多按钮 -->
+                    <div class="text-center">
+                        <button onclick="showPage('works')" class="btn-secondary px-10 py-4 bg-darkLight border border-primary/40 rounded-xl font-semibold text-lg">
+                            查看全部作品 <i class="fa fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔥 第五屏：工作流程 -->
+            <div class="py-20 px-4">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-14">
+                        <h2 class="text-4xl font-bold mb-4">
+                            <span class="text-gradient">工作流程</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg">标准化流程，保障每一个项目高质量交付</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <!-- 步骤1 -->
+                        <div class="text-center">
+                            <div class="relative inline-block mb-6">
+                                <div class="w-20 h-20 rounded-full flex items-center justify-center glass" style="box-shadow: 0 0 30px rgba(0,102,255,0.3);">
+                                    <i class="fa fa-comments text-3xl" style="color: #00FFFF;"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #0066FF, #7C3AED);">1</div>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">需求沟通</h3>
+                            <p class="text-gray-500 text-sm">深入了解项目需求<br>明确目标与风格</p>
+                        </div>
+
+                        <!-- 步骤2 -->
+                        <div class="text-center">
+                            <div class="relative inline-block mb-6">
+                                <div class="w-20 h-20 rounded-full flex items-center justify-center glass" style="box-shadow: 0 0 30px rgba(124,58,237,0.3);">
+                                    <i class="fa fa-lightbulb-o text-3xl" style="color: #7C3AED;"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #0066FF, #7C3AED);">2</div>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">创意策划</h3>
+                            <p class="text-gray-500 text-sm">制定创意方案<br>设计视觉风格</p>
+                        </div>
+
+                        <!-- 步骤3 -->
+                        <div class="text-center">
+                            <div class="relative inline-block mb-6">
+                                <div class="w-20 h-20 rounded-full flex items-center justify-center glass" style="box-shadow: 0 0 30px rgba(0,255,255,0.3);">
+                                    <i class="fa fa-cogs text-3xl" style="color: #00FF88;"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #0066FF, #7C3AED);">3</div>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">制作执行</h3>
+                            <p class="text-gray-500 text-sm">专业软件制作<br>全程质量把控</p>
+                        </div>
+
+                        <!-- 步骤4 -->
+                        <div class="text-center">
+                            <div class="relative inline-block mb-6">
+                                <div class="w-20 h-20 rounded-full flex items-center justify-center glass" style="box-shadow: 0 0 30px rgba(0,255,136,0.3);">
+                                    <i class="fa fa-check-circle text-3xl" style="color: #0066FF;"></i>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold" style="background: linear-gradient(135deg, #0066FF, #7C3AED);">4</div>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2">交付验收</h3>
+                            <p class="text-gray-500 text-sm">成品交付验收<br>支持修改调整</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔥 第六屏：CTA 行动召唤 -->
+            <div class="py-20 px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass rounded-3xl p-12 text-center" style="background: linear-gradient(135deg, rgba(0,102,255,0.15), rgba(124,58,237,0.15), rgba(0,255,255,0.1)); box-shadow: 0 0 60px rgba(0,102,255,0.2);">
+                        <h2 class="text-4xl font-bold mb-4">
+                            <span class="text-gradient">有项目想法？让我们聊聊</span>
+                        </h2>
+                        <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto">
+                            无论是视频制作、三维设计还是平面创意，我都能为您提供专业的解决方案
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="showPage('contact')" class="btn-primary px-10 py-4 rounded-xl font-semibold text-lg" style="background: linear-gradient(135deg, #0066FF, #7C3AED); box-shadow: 0 0 30px rgba(0,102,255,0.4);">
+                                <i class="fa fa-paper-plane mr-2"></i>立即联系
+                            </button>
+                            <button onclick="showPage('works')" class="btn-secondary px-10 py-4 bg-darkLight/50 border border-primary/40 rounded-xl font-semibold text-lg">
+                                <i class="fa fa-film mr-2"></i>再看看作品
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品集页面 -->
+    <div id="page-works" class="page">
+        <div class="page-content max-w-7xl mx-auto px-4 py-16">
+            <!-- 🔥 顶部超大标题区 -->
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-bold mb-5">
+                    <span class="text-gradient">作品集</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-4">精选视频作品 · AE特效 · 影视后期 · 三维创作 · 平面设计</p>
+                <div class="w-28 h-1.5 bg-gradient-to-r from-primary via-accent to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 🔥 筛选器 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-14">
+                <button class="filter-btn active px-8 py-3 rounded-full text-lg" onclick="filterWorks('all', this)">全部作品</button>
+                <button class="filter-btn px-8 py-3 rounded-full text-lg bg-darkLight border border-primary/30" onclick="filterWorks('ae', this)">AE特效</button>
+                <button class="filter-btn px-8 py-3 rounded-full text-lg bg-darkLight border border-primary/30" onclick="filterWorks('3d', this)">3D制作</button>
+                <button class="filter-btn px-8 py-3 rounded-full text-lg bg-darkLight border border-primary/30" onclick="filterWorks('video', this)">视频剪辑</button>
+                <button class="filter-btn px-8 py-3 rounded-full text-lg bg-darkLight border border-primary/30" onclick="filterWorks('graphic', this)">平面创作</button>
+            </div>
+
+            <!-- ======================================== -->
+            <!-- 🔥 AE特效作品专区 - 独立标题，独立区域 -->
+            <!-- ======================================== -->
+            <div class="work-section mb-16" data-section="ae">
+                <h2 class="text-2xl font-bold mb-8 flex items-center w-full">
+                    <i class="fa fa-magic mr-3" style="color: #00FFFF;"></i>
+                    <span class="text-gradient">AE特效作品</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- AE作品1 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="ae" onclick="playVideo('https://aka.doubaocdn.com/s/f9To1wbadj', 'aeloog特效')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/f9To1wbadj" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>AE特效
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold mb-2">Logo特效动画</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AE作品2 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="ae" onclick="playVideo('https://aka.doubaocdn.com/s/kyiG1wbadj', 'mg科普水循环')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/kyiG1wbadj" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>AE特效
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold mb-2">MG科普水循环</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Motion Graphics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AE作品3 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="ae" onclick="playVideo('https://aka.doubaocdn.com/s/gwlY1wbadj', 'ae开头制作')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/gwlY1wbadj" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>AE特效
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold mb-2">片头制作</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">片头设计</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AE作品4 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="ae" onclick="playVideo('https://aka.doubaocdn.com/s/m7ee1wbadj', 'ae片头')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/m7ee1wbadj" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>AE特效
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-semibold mb-2">专业片头</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">视觉特效</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================== -->
+            <!-- 🔥 3D制作作品专区 - 独立标题，独立区域 -->
+            <!-- ======================================== -->
+            <div class="work-section mb-16" data-section="3d">
+                <h2 class="text-2xl font-bold mb-8 flex items-center w-full">
+                    <i class="fa fa-cube mr-3" style="color: #7C3AED;"></i>
+                    <span class="text-gradient">3D制作作品</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 3D作品1：岛 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="showImageDetail('https://aka.doubaocdn.com/s/0wVp1wbuoN', '岛屿场景')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://aka.doubaocdn.com/s/0wVp1wbuoN" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">岛屿场景</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">3D建模</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D作品2：红枫亭 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="showImageDetail('https://aka.doubaocdn.com/s/4vuo1wbuoN', '红枫亭')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://aka.doubaocdn.com/s/4vuo1wbuoN" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">红枫亭</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">场景渲染</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D作品3：麦田女孩 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="showImageDetail('https://aka.doubaocdn.com/s/T0ot1wbuoN', '麦田女孩')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://aka.doubaocdn.com/s/T0ot1wbuoN" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">麦田女孩</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">角色渲染</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D作品4：地铁花海（图片） -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="showImageDetail('https://aka.doubaocdn.com/s/0yT81wbuoN', '地铁花海')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <img src="https://aka.doubaocdn.com/s/0yT81wbuoN" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">地铁花海</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">场景设计</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D作品5：地铁花海（视频） -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="playVideo('https://aka.doubaocdn.com/s/1zNA1wbuoN', '地铁花海作品')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/1zNA1wbuoN" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">地铁花海动画</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">动画渲染</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3D作品6：森林小狐狸（视频） -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="3d" onclick="playVideo('https://aka.doubaocdn.com/s/tCE61wbuoN', '森林小狐狸作品')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/tCE61wbuoN" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-cube mr-1"></i>3D制作
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">森林小狐狸</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">角色动画</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================== -->
+            <!-- 🔥 视频剪辑作品专区 - 独立标题，独立区域 -->
+            <!-- ======================================== -->
+            <div class="work-section mb-16" data-section="video">
+                <h2 class="text-2xl font-bold mb-8 flex items-center w-full">
+                    <i class="fa fa-video-camera mr-3" style="color: #00FFFF;"></i>
+                    <span class="text-gradient">视频剪辑作品</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 视频作品1：学院舞会开场视频 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/L2Bn1wd2dU', '学院舞会开场视频')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/L2Bn1wd2dU" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">学院舞会开场视频</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Premiere</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频作品2：3D产品展示视频 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/IHyb1wd2dU', '3D产品展示视频')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/IHyb1wd2dU" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">3D产品展示视频</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Blender</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">After Effects</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频作品3：AI首尾帧 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/eZeU1wd2dU', 'AI首尾帧')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/eZeU1wd2dU" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">AI首尾帧</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Premiere</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">AI创意</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频作品4：鲜花切换 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/QmRt1wbuc9', '鲜花切换')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/QmRt1wbuc9" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">鲜花切换转场</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Premiere</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">转场特效</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频作品5：影视转场 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/zuvN1wbuc9', '影视转场')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/zuvN1wbuc9" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">影视转场特效</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Premiere</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">影视剪辑</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 视频作品6：专业转场 -->
+                    <div class="work-card glass rounded-2xl overflow-hidden cursor-pointer" data-category="video" onclick="playVideo('https://aka.doubaocdn.com/s/SwCh1wbuc9', '转场')">
+                        <div class="relative aspect-video overflow-hidden">
+                            <video class="w-full h-full object-cover" muted loop>
+                                <source src="https://aka.doubaocdn.com/s/SwCh1wbuc9" type="video/mp4">
+                            </video>
+                            <div class="video-play-btn">
+                                <i class="fa fa-play"></i>
+                            </div>
+                            <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-dark/80 text-xs border border-accent/30">
+                                <i class="fa fa-play-circle mr-1"></i>视频剪辑
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">专业转场效果</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">Premiere</span>
+                                <span class="px-2 py-1 rounded bg-darkLighter text-xs text-gray-400">转场设计</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================== -->
+            <!-- 🔥 平面创作作品专区 - 书本堆叠效果 -->
+            <!-- ======================================== -->
+            <div class="work-section" data-section="graphic">
+                <h2 class="text-2xl font-bold mb-8 flex items-center w-full">
+                    <i class="fa fa-paint-brush mr-3" style="color: #00FF88;"></i>
+                    <span class="text-gradient">平面创作作品</span>
+                </h2>
+
+                <!-- 书本堆叠展示区 -->
+                <div class="glass rounded-3xl p-12" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));">
+                    <div class="book-stack-container">
+                        <!-- 书本1 - 最前面：科技风 -->
+                        <div class="book-item book-1" onclick="showImageDetail('https://aka.doubaocdn.com/s/Ja7s1wcede', '科技风设计')">
+                            <img src="https://aka.doubaocdn.com/s/Ja7s1wcede" alt="科技风设计">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">科技风设计</h3>
+                                <p class="book-desc">未来感科技视觉设计</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+
+                        <!-- 书本2 - 左侧：珊瑚海 -->
+                        <div class="book-item book-2" onclick="showImageDetail('https://aka.doubaocdn.com/s/mlmP1wcede', '珊瑚海')">
+                            <img src="https://aka.doubaocdn.com/s/mlmP1wcede" alt="珊瑚海">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">珊瑚海</h3>
+                                <p class="book-desc">海洋主题视觉创作</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+
+                        <!-- 书本3 - 最左侧：花 -->
+                        <div class="book-item book-3" onclick="showImageDetail('https://aka.doubaocdn.com/s/VuHN1wcede', '花卉设计')">
+                            <img src="https://aka.doubaocdn.com/s/VuHN1wcede" alt="花卉设计">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">花卉设计</h3>
+                                <p class="book-desc">自然花卉艺术创作</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+
+                        <!-- 书本4 - 右侧：木椅 -->
+                        <div class="book-item book-4" onclick="showImageDetail('https://aka.doubaocdn.com/s/Y9H11wcede', '木椅设计')">
+                            <img src="https://aka.doubaocdn.com/s/Y9H11wcede" alt="木椅设计">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">木椅设计</h3>
+                                <p class="book-desc">产品视觉展示设计</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+
+                        <!-- 书本5 - 最右侧：作品1 -->
+                        <div class="book-item book-5" onclick="showImageDetail('https://aka.doubaocdn.com/s/mRwU1wcede', '平面作品一')">
+                            <img src="https://aka.doubaocdn.com/s/mRwU1wcede" alt="平面作品一">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">平面作品一</h3>
+                                <p class="book-desc">创意视觉设计作品</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+
+                        <!-- 书本6 - 最最右侧：作品2 -->
+                        <div class="book-item book-6" onclick="showImageDetail('https://aka.doubaocdn.com/s/N5cE1wcede', '平面作品二')">
+                            <img src="https://aka.doubaocdn.com/s/N5cE1wcede" alt="平面作品二">
+                            <div class="book-overlay">
+                                <div class="book-view-btn">
+                                    <i class="fa fa-search-plus"></i>
+                                </div>
+                                <h3 class="book-title">平面作品二</h3>
+                                <p class="book-desc">艺术设计创作</p>
+                                <span class="graphic-tag">Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 提示文字 -->
+                    <div class="text-center mt-8">
+                        <p class="text-gray-400 text-sm">
+                            <i class="fa fa-hand-pointer-o mr-2" style="color: #00FFFF;"></i>
+                            悬停查看展开效果 · 点击查看大图
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 平面创作技能标签 -->
+                <div class="mt-10 flex flex-wrap justify-center gap-3">
+                    <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">
+                        <i class="fa fa-paint-brush mr-2" style="color: #00FF88;"></i>Photoshop
+                    </span>
+                    <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">
+                        <i class="fa fa-vector-square mr-2" style="color: #00FFFF;"></i>Illustrator
+                    </span>
+                    <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">
+                        <i class="fa fa-mobile mr-2" style="color: #7C3AED;"></i>UI设计
+                    </span>
+                    <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">
+                        <i class="fa fa-shopping-bag mr-2" style="color: #00FF88;"></i>电商设计
+                    </span>
+                    <span class="tag-item px-5 py-2 rounded-full bg-darkLight border border-primary/30 text-sm">
+                        <i class="fa fa-image mr-2" style="color: #00FFFF;"></i>品牌设计
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于我页面 -->
+    <div id="page-about" class="page">
+        <div class="page-content max-w-5xl mx-auto px-4 py-12">
+            <div class="text-center mb-10">
+                <h1 class="text-5xl font-bold mb-4"><span class="text-gradient">关于我</span></h1>
+                <p class="text-gray-400 text-lg">了解更多关于我的信息</p>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="glass rounded-2xl p-8 mb-8">
+                <h2 class="text-2xl font-bold mb-4"><i class="fa fa-user-circle mr-3" style="color: #00FFFF;"></i>个人简介</h2>
+                <p class="text-gray-300 leading-relaxed text-lg mb-4">
+                    你好，我是<span style="color: #00FFFF; text-shadow: 0 0 10px rgba(0,255,255,0.5);" class="font-semibold">张承烨</span>，拥有1年专业视频剪辑与后期制作工作经验，累计完成超过<span style="color: #00FFFF;" class="font-semibold">50个</span>商业宣传视频、项目展示片项目。同时具备网络工程本科+物联网应用技术专科的双专业技术背景。
+                </p>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    熟练掌握全流程影视后期制作，精通PR、AE、DaVinci等专业软件，同时具备Blender、Maya三维建模能力与网络技术基础。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- 工作经历 -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold mb-6"><i class="fa fa-briefcase mr-3" style="color: #0066FF;"></i>工作经历</h2>
+                    <div class="border-l-2 border-primary/40 pl-6">
+                        <div style="color: #00FFFF;" class="text-sm mb-1">2024.06 - 2025.06</div>
+                        <h3 class="text-xl font-semibold">郑州同益物联网应用科技公司</h3>
+                        <p class="text-gray-400 mb-3">视频剪辑</p>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li>• 负责公司各类宣传视频及项目展示片的剪辑与后期制作</li>
+                            <li>• 累计完成超过50个视频项目</li>
+                            <li>• 熟练运用Adobe Premiere Pro、After Effects等专业软件</li>
+                            <li>• 平均缩短单个项目制作周期20%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 教育背景 -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold mb-6"><i class="fa fa-graduation-cap mr-3" style="color: #7C3AED;"></i>教育背景</h2>
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-secondary/40 pl-6">
+                            <div style="color: #7C3AED;" class="text-sm mb-1">2025.09 - 2027.06</div>
+                            <h3 class="text-xl font-semibold">商丘学院</h3>
+                            <p class="text-gray-400">本科 - 网络工程</p>
+                        </div>
+                        <div class="border-l-2 border-accent/40 pl-6">
+                            <div style="color: #00FFFF;" class="text-sm mb-1">2022.09 - 2025.06</div>
+                            <h3 class="text-xl font-semibold">河南工业职业技术大学</h3>
+                            <p class="text-gray-400">大专 - 物联网应用技术</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技能矩阵 -->
+            <div class="glass rounded-2xl p-8">
+                <h2 class="text-2xl font-bold mb-8"><i class="fa fa-cogs mr-3" style="color: #0066FF;"></i>技能矩阵</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="skill-card bg-darkLighter/40 rounded-xl p-6 border border-primary/30">
+                        <h3 class="text-xl font-semibold mb-4" style="color: #0066FF;">🎬 影视后期</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>Premiere</strong>：视频剪辑、调色、特效</li>
+                            <li><strong>After Effects</strong>：动态视觉、特效合成</li>
+                            <li><strong>DaVinci</strong>：专业级色彩校正</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card bg-darkLighter/40 rounded-xl p-6 border border-secondary/30">
+                        <h3 class="text-xl font-semibold mb-4" style="color: #7C3AED;">🎨 设计与三维</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>PS</strong>：高级修图、图像合成</li>
+                            <li><strong>Blender</strong>：三维建模与动画</li>
+                            <li><strong>Maya</strong>：角色建模、场景搭建</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card bg-darkLighter/40 rounded-xl p-6 border border-accent/30">
+                        <h3 class="text-xl font-semibold mb-4" style="color: #00FFFF;">🔧 技术能力</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li><strong>TCP/IP协议</strong>、网络架构设计</li>
+                            <li><strong>单片机开发</strong>、物联网通信</li>
+                            <li><strong>Java编程</strong>、数据库管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我页面 -->
+    <div id="page-contact" class="page">
+        <div class="page-content max-w-4xl mx-auto px-4 py-12">
+            <div class="text-center mb-10">
+                <h1 class="text-5xl font-bold mb-4"><span class="text-gradient">联系我</span></h1>
+                <p class="text-gray-400 text-lg">期待与您的合作</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 联系方式 -->
+                <div class="glass rounded-2xl p-8">
+                    <h2 class="text-2xl font-bold mb-8">联系方式</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="contact-item flex items-center p-4 rounded-xl bg-darkLighter/30 border-l-2 border-transparent">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(0,102,255,0.2);">
+                                <i class="fa fa-phone text-xl" style="color: #0066FF;"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">电话</div>
+                                <div class="text-lg font-semibold">17837365101</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item flex items-center p-4 rounded-xl bg-darkLighter/30 border-l-2 border-transparent">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(124,58,237,0.2);">
+                                <i class="fa fa-envelope text-xl" style="color: #7C3AED;"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">邮箱</div>
+                                <div class="text-lg font-semibold">3263769024@qq.com</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item flex items-center p-4 rounded-xl bg-darkLighter/30 border-l-2 border-transparent">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4" style="background: rgba(0,255,255,0.2);">
+                                <i class="fa fa-map-marker text-xl" style="color: #00FFFF;"></i>
+                            </div>
+                            <div>
+                                <div class="text-gray-400 text-sm">现居</div>
+                                <div class="text-lg font-semibold">开封</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 社交平台 -->
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold mb-4">社交平台</h3>
+                        <div class="flex gap-4">
+                            <div class="social-btn w-14 h-14 rounded-xl bg-darkLighter flex items-center justify-center cursor-pointer">
+                                <i class="fa fa-weixin text-xl"></i>
+                            </div>
+                            <div class="social-btn w-14 h-14 rounded-xl bg-darkLighter flex items-center justify-center cursor-pointer">
+                                <i class="fa fa-qq text-xl"></i>
+                            </div>
+                            <div class="social-btn w-14 h-14 rounded-xl bg-darkLighter flex items-center justify-center cursor-pointer">
+                                <i class="fa fa-github text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 下载简历 & 自我评价 -->
+                <div class="space-y-8">
+                    <div class="glass rounded-2xl p-8 text-center">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #0066FF, #00FFFF, #7C3AED); box-shadow: 0 0 40px rgba(0,102,255,0.5);">
+                            <i class="fa fa-file-pdf-o text-4xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-4">下载我的简历</h2>
+                        <p class="text-gray-400 mb-6">获取完整的个人简历，了解更多详细信息</p>
+                        <button onclick="downloadResume()" class="resume-btn w-full px-8 py-4 rounded-xl font-semibold text-lg" style="background: linear-gradient(135deg, #0066FF, #7C3AED);">
+                            <i class="fa fa-download mr-2"></i>下载简历 PDF
+                        </button>
+                    </div>
+
+                    <div class="glass rounded-2xl p-8">
+                        <h2 class="text-2xl font-bold mb-4"><i class="fa fa-star mr-3" style="color: #00FFFF;"></i>自我评价</h2>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            具备1年视频剪辑与后期制作全职工作经验，熟悉商业视频制作全流程，能够高效完成从创意到成片的全链路工作。
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            同时拥有网络工程和物联网应用技术的专业背景，兼具技术思维与创意能力，团队协作能力强，善于沟通协调。
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-darkLighter">
+                            <div class="flex items-center" style="color: #00FF88;">
+                                <i class="fa fa-check-circle mr-2"></i>
+                                <span class="font-semibold">随时可到岗 · 期待合作机会</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频播放弹窗 -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md" onclick="closeVideoModal()">
+        <div class="max-w-4xl w-full" onclick="event.stopPropagation()">
+            <div class="relative">
+                <button onclick="closeVideoModal()" class="absolute -top-12 right-0 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all text-white" style="background: rgba(15,23,42,0.9);">
+                    <i class="fa fa-times"></i>
+                </button>
+                <video id="modal-video" class="w-full rounded-2xl" controls autoplay>
+                    <source src="" type="video/mp4">
+                </video>
+                <h3 id="video-title" class="text-xl font-bold mt-4 text-center text-gradient"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片查看弹窗 -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-8 bg-black/90 backdrop-blur-md" onclick="closeImageModal()">
+        <div class="max-w-2xl w-full" onclick="event.stopPropagation()">
+            <div class="relative">
+                <button onclick="closeImageModal()" class="absolute -top-14 right-0 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary transition-all text-white text-lg" style="background: rgba(15,23,42,0.95); box-shadow: 0 0 20px rgba(0,102,255,0.4);">
+                    <i class="fa fa-times"></i>
+                </button>
+                <div class="glass rounded-2xl p-4" style="box-shadow: 0 0 60px rgba(0,102,255,0.3);">
+                    <img id="modal-image-view" src="" class="w-full rounded-xl max-h-[70vh] object-contain">
+                </div>
+                <h3 id="image-title" class="text-2xl font-bold mt-6 text-center text-gradient"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- 作品详情弹窗 -->
+    <div id="work-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onclick="closeWorkModal()">
+        <div class="glass rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <div class="relative">
+                <img id="modal-image" src="" class="w-full aspect-video object-cover rounded-t-2xl">
+                <button onclick="closeWorkModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-all" style="background: rgba(15,23,42,0.9);">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <h2 id="modal-title" class="text-2xl font-bold mb-4 text-gradient"></h2>
+                <div id="modal-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="py-8 text-center text-gray-500 border-t border-primary/20 relative z-10">
+        <p>© 2025 张承烨. All rights reserved.</p>
+        <p class="text-sm mt-2" style="color: #00FFFF; opacity: 0.6;">影视后期 | AE特效 | 3D制作 | 视频剪辑 | 平面设计</p>
+    </footer>
+
+    <style>
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <script>
+        // ========================================
+        // 🔥 粒子系统 - 科技感星空
+        // ========================================
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.5 ? '0, 102, 255' : '0, 255, 255';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            
+            // 粒子连线
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 102, 255, ${0.15 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // ========================================
+        // 🔥 鼠标跟随超级光效
+        // ========================================
+        const mouseGlow = document.getElementById('mouse-glow');
+        let mouseX = 0, mouseY = 0;
+        let currentX = 0, currentY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX - 300;
+            mouseY = e.clientY - 300;
+        });
+
+        function smoothFollow() {
+            currentX += (mouseX - currentX) * 0.08;
+            currentY += (mouseY - currentY) * 0.08;
+            mouseGlow.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            requestAnimationFrame(smoothFollow);
+        }
+        smoothFollow();
+
+        // ========================================
+        // 🔥 页面切换 - 修复完美版
+        // ========================================
+        function showPage(pageId) {
+            // 移除所有激活状态
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            
+            // 隐藏所有页面
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // 显示目标页面
+            const targetPage = document.getElementById('page-' + pageId);
+            targetPage.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ========================================
+        // 🔥 作品分类筛选 - 每个专区独立标题独立显示
+        // ========================================
+        function filterWorks(category, btn) {
+            // 更新按钮状态
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('active');
+                b.classList.add('bg-darkLight', 'border', 'border-primary/30');
+            });
+            btn.classList.add('active');
+            btn.classList.remove('bg-darkLight', 'border', 'border-primary/30');
+
+            // 获取四个专区
+            const aeSection = document.querySelector('[data-section="ae"]');
+            const d3Section = document.querySelector('[data-section="3d"]');
+            const videoSection = document.querySelector('[data-section="video"]');
+            const graphicSection = document.querySelector('[data-section="graphic"]');
+            
+            if (category === 'all') {
+                // 全部作品：显示四个专区 + 所有卡片
+                aeSection.style.display = 'block';
+                d3Section.style.display = 'block';
+                videoSection.style.display = 'block';
+                graphicSection.style.display = 'block';
+                document.querySelectorAll('.work-card').forEach(card => {
+                    card.style.display = 'block';
+                });
+            } else if (category === 'ae') {
+                // 只看AE：只显示AE专区
+                aeSection.style.display = 'block';
+                d3Section.style.display = 'none';
+                videoSection.style.display = 'none';
+                graphicSection.style.display = 'none';
+            } else if (category === '3d') {
+                // 只看3D：只显示3D专区
+                aeSection.style.display = 'none';
+                d3Section.style.display = 'block';
+                videoSection.style.display = 'none';
+                graphicSection.style.display = 'none';
+            } else if (category === 'video') {
+                // 只看视频剪辑：只显示视频剪辑专区
+                aeSection.style.display = 'none';
+                d3Section.style.display = 'none';
+                videoSection.style.display = 'block';
+                graphicSection.style.display = 'none';
+            } else if (category === 'graphic') {
+                // 只看平面创作：只显示平面创作专区
+                aeSection.style.display = 'none';
+                d3Section.style.display = 'none';
+                videoSection.style.display = 'none';
+                graphicSection.style.display = 'block';
+            }
+        }
+
+        // ========================================
+        // 🔥 视频播放功能
+        // ========================================
+        function playVideo(videoUrl, title) {
+            document.getElementById('modal-video').src = videoUrl;
+            document.getElementById('video-title').textContent = title;
+            document.getElementById('video-modal').classList.remove('hidden');
+            document.getElementById('video-modal').classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const video = document.getElementById('modal-video');
+            video.pause();
+            video.src = '';
+            document.getElementById('video-modal').classList.add('hidden');
+            document.getElementById('video-modal').classList.remove('flex');
+        }
+
+        // ========================================
+        // 🔥 图片查看功能
+        // ========================================
+        function showImageDetail(imageUrl, title) {
+            document.getElementById('modal-image-view').src = imageUrl;
+            document.getElementById('image-title').textContent = title;
+            document.getElementById('image-modal').classList.remove('hidden');
+            document.getElementById('image-modal').classList.add('flex');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+            document.getElementById('image-modal').classList.remove('flex');
+        }
+
+        // ========================================
+        // 🔥 下载简历功能
+        // ========================================
+        function downloadResume() {
+            const resumeUrl = 'https://aka.doubaocdn.com/s/qW0f1wd1WW';
+            // 直接在新窗口打开PDF，浏览器会自动提供下载按钮
+            // 这是最稳妥的方式，不会被任何安全策略屏蔽
+            window.open(resumeUrl, '_blank');
+        }
+
+        const workDetails = {
+            1: { title: '物联网产品宣传视频', image: 'https://picsum.photos/seed/tech1/800/450', content: '<p class="text-gray-300">为公司物联网产品制作宣传视频，用于展会展示与官网推广。采用快节奏剪辑突出产品科技感，蓝色系调色匹配物联网行业调性。</p>' },
+            2: { title: '智能设备展示片', image: 'https://picsum.photos/seed/tech2/800/450', content: '<p class="text-gray-300">智能设备新品发布展示视频，用于线上发布会与电商平台展示。突出产品细节展示，运用光影变化营造科技氛围。</p>' },
+            3: { title: '企业年会开场视频', image: 'https://picsum.photos/seed/tech3/800/450', content: '<p class="text-gray-300">企业年度总结大会开场视频，展示年度成果与团队风貌。采用震撼的视觉特效与激昂的背景音乐。</p>' },
+            4: { title: '产品3D演示动画', image: 'https://picsum.photos/seed/tech4/800/450', content: '<p class="text-gray-300">新产品3D可视化演示，全方位展示产品结构与功能特点。使用Blender进行高精度建模与渲染。</p>' },
+            6: { title: '技术培训课程视频', image: 'https://picsum.photos/seed/tech6/800/450', content: '<p class="text-gray-300">技术培训系列课程视频制作，保证教学内容清晰易懂。课程观看完成率达85%，学员满意度评分4.9/5.0。</p>' }
+        };
+
+        function showWorkDetail(id) {
+            const work = workDetails[id];
+            document.getElementById('modal-image').src = work.image;
+            document.getElementById('modal-title').textContent = work.title;
+            document.getElementById('modal-content').innerHTML = work.content;
+            document.getElementById('work-modal').classList.remove('hidden');
+            document.getElementById('work-modal').classList.add('flex');
+        }
+
+        function closeWorkModal() {
+            document.getElementById('work-modal').classList.add('hidden');
+            document.getElementById('work-modal').classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
